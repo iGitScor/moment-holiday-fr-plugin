@@ -91,7 +91,7 @@
     };
 
     moment.fn.lastWorkingDay = function () {
-      let lastWorkDay = moment.startOf('day');
+      let lastWorkDay = this.startOf('day');
       while (!lastWorkDay.isWorkingDay()) {
         lastWorkDay = lastWorkDay.subtract(1, 'day');
       }
@@ -100,7 +100,7 @@
     }
 
     moment.fn.nextWorkingDay = function () {
-      let nextWorkDay = moment.startOf('day');
+      let nextWorkDay = this.startOf('day');
       while (!nextWorkDay.isWorkingDay()) {
         nextWorkDay = nextWorkDay.add(1, 'day');
       }
