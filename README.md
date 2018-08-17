@@ -18,7 +18,17 @@ import 'moment-holiday-fr-plugin';
 
 const isWeekend = moment().isWeekEnd();
 const isHoliday = moment().isHoliday();
-const isWorkingDay = moment.isWorkingDay();
+const isWorkingDay = moment().isWorkingDay();
+```
+
+### Date helper
+
+```javascript
+import moment from 'moment';
+import 'moment-holiday-fr-plugin';
+
+const lastWorkingDay = moment().lastWorkingDay();
+const nextWorkingDay = moment().nextWorkingDay();
 ```
 
 ## Contributing

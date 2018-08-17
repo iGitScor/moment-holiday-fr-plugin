@@ -90,6 +90,24 @@
       return null;
     };
 
+    moment.fn.lastWorkingDay = function () {
+      let lastWorkDay = this.startOf('day');
+      while (!lastWorkDay.isWorkingDay()) {
+        lastWorkDay = lastWorkDay.subtract(1, 'day');
+      }
+
+      return lastWorkDay;
+    }
+
+    moment.fn.nextWorkingDay = function () {
+      let nextWorkDay = this.startOf('day');
+      while (!nextWorkDay.isWorkingDay()) {
+        nextWorkDay = nextWorkDay.add(1, 'day');
+      }
+
+      return nextWorkDay;
+    }
+
     moment.fn.isHoliday = function () { return (this.getHoliday() !== null) };
     moment.fn.isWeekEnd = function () { return (this.day() === 0 || this.day() === 6) };
     moment.fn.isWorkingDay = function () { return (!this.isWeekEnd() && !this.isHoliday()) };
